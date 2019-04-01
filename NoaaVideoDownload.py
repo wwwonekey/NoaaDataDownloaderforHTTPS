@@ -7,7 +7,7 @@
 @Github: https://github.com//wwwonekey
 @LastEditors: wk
 @Date: 2019-03-31 20:11:01
-@LastEditTime: 2019-04-01 14:24:10
+@LastEditTime: 2019-04-01 21:17:53
 '''
 import os
 import sys
@@ -232,7 +232,7 @@ class HttpDataDownloader():
         if self.host_os == 'windows':
             output_file = output_file.replace(r'/', '\\')
             path = path.replace('/', '\\')
-
+        path = path.replacec('%20',' ')
         # Don't append path if we're currently dealing with a file in the root
         if path == '\\':
             final_output_file = self.output_dir + output_file
